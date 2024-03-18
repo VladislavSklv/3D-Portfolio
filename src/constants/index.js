@@ -10,18 +10,18 @@ import {
   reactjs,
   redux,
   tailwind,
-  nodejs,
-  mongodb,
+  materialui,
+  sass,
   git,
   figma,
-  docker,
+  bem,
   meta,
   starbucks,
   tesla,
   shopify,
-  carrent,
-  jobit,
-  tripguide,
+  restaurant,
+  clinic,
+  movie,
   threejs,
 } from "../assets";
 
@@ -42,19 +42,19 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Dynamic Web Sites",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "3D Visuals",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Custom Animations",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "SEO Friendly",
     icon: creator,
   },
 ];
@@ -89,12 +89,12 @@ const technologies = [
     icon: tailwind,
   },
   {
-    name: "Node JS",
-    icon: nodejs,
+    name: "Material UI",
+    icon: materialui,
   },
   {
-    name: "MongoDB",
-    icon: mongodb,
+    name: "Sass",
+    icon: sass,
   },
   {
     name: "Three JS",
@@ -109,8 +109,8 @@ const technologies = [
     icon: figma,
   },
   {
-    name: "docker",
-    icon: docker,
+    name: "BEM",
+    icon: bem,
   },
 ];
 
@@ -172,93 +172,93 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
+      "I thought it was impossible to make a website as beautiful as our product, but Vlad proved me wrong.",
+    name: "Pavel-GoodJob",
     designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    company: "Bot-T",
+    image: "https://randomuser.me/api/portraits/men/4.jpg",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
+      "I've never met a web developer who truly cares about their clients' success like Vladislav does.",
+    name: "Aleksandr",
     designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    company: "CLT-PRO",
+    image: "https://randomuser.me/api/portraits/men/6.jpg",
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
+      "Everything was done as quickly as possible, and most importantly with high quality. We can`t thank him enough!",
+    name: "Gazovik7Smirnov",
     designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    company: "Burevestnik",
+    image: "https://randomuser.me/api/portraits/men/7.jpg",
   },
 ];
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Restaurant",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Web application that uses Telegram WebApps and enables users to add dishes to cart and change the composition of the dish if possible.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Restapi",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Redux Toolkit",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: restaurant,
+    source_code_link: "https://github.com/VladislavSklv/Restaurant",
   },
   {
-    name: "Job IT",
+    name: "Spa salon",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Web application that uses Telegram WebApps and enables users to choose treatments, select a specialist and book everything for the time and date of your choice.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "TypeScript",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "Redux Toolkit",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: clinic,
+    source_code_link: "https://github.com/VladislavSklv/Spa-Salon",
   },
   {
-    name: "Trip Guide",
+    name: "Movie Search",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A comprehensive movie searching platform that allows users to find any movie, TV series, and TV shows, and read critics' reviews of them.",
     tags: [
       {
-        name: "nextjs",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "Restapi",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "Tailwind",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: movie,
+    source_code_link: "https://github.com/VladislavSklv/MovieApp",
   },
 ];
 
