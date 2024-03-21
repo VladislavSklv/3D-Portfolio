@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
@@ -21,41 +20,33 @@ const Contact = () => {
     setForm({ ...form, [name]: value });
   };
 
+  async function formSend({ name, email, message }) {
+    if (name.length > 1 && email.length > 3 && message.length > 3) {
+      let response = await fetch("./send.php", {
+        method: "POST",
+        body: { name, email, message },
+      });
+      if (response.ok) {
+        setLoading(false);
+        alert("Thank you! I`ll get back to you as soon as possible.");
+      } else {
+        setLoading(false);
+        console.log(result.error);
+        alert("Something went wrong. Please try again later.");
+      }
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .send(
-        "service_fboe5nl",
-        "template_p776n7b",
-        {
-          from_name: form.name,
-          to_name: "Vladislav",
-          from_email: form.email,
-          to_email: "79214579055@yandex.ru",
-          message: form.message,
-        },
-        "O6h77uBEaKV9kBD98"
-      )
-      .then(() => {
-        setLoading(false);
-        alert("Thank you! I`ll get back to you as soon as possible.");
-
-        setForm(
-          {
-            name: "",
-            email: "",
-            message: "",
-          },
-          (error) => {
-            setLoading(false);
-
-            console.log(error);
-            alert("Something went wrong. Please try again later.");
-          }
-        );
-      });
+    formSend(form);
   };
 
   return (
