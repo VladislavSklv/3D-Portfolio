@@ -22,9 +22,14 @@ const Contact = () => {
 
   async function formSend({ name, email, message }) {
     if (name.length > 1 && email.length > 3 && message.length > 3) {
+      const data = new FormData();
+      data.append("name", name);
+      data.append("email", email);
+      data.append("message", message);
+
       let response = await fetch("./send.php", {
         method: "POST",
-        body: { name, email, message },
+        body: data,
       });
       if (response.ok) {
         setLoading(false);
@@ -68,6 +73,10 @@ const Contact = () => {
             <input
               type="text"
               name="name"
+              required
+              minLength={2}
+              maxLength={500}
+              pattern="/^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u"
               value={form.name}
               onChange={handleChange}
               placeholder="What`s your name?"
@@ -80,6 +89,9 @@ const Contact = () => {
             <input
               type="email"
               name="email"
+              required
+              minLength={3}
+              maxLength={500}
               value={form.email}
               onChange={handleChange}
               placeholder="Type your email"
@@ -92,6 +104,9 @@ const Contact = () => {
             <textarea
               rows="7"
               name="message"
+              required
+              minLength={3}
+              maxLength={500}
               value={form.message}
               onChange={handleChange}
               placeholder="What do you want to say?"
