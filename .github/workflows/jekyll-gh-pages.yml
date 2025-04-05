@@ -27,10 +27,15 @@ jobs:
       run: npm run build
       
     - name: Verify build
-      run: ls -la dist/
+      run: |
+        ls -la dist/
+        ls -la dist/assets/
+        grep -r "assets/" dist/
       
-    - name: Deploy
+    - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
+        force_orphan: true  # Очищает ветку перед деплоем
+        keep_files: false   # Не сохранять старые файлы
