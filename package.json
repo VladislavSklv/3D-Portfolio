@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://vladislavsklv.github.io",
+  "homepage": "https://vladislavsklv.github.io/3D-Portfolio.git/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
